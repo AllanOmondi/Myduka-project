@@ -12,32 +12,32 @@ connect=psycopg2.connect(
 curr=connect.cursor()
 
 
-# # fetch products
-# def fetch_products():
-#     curr.execute('select * from products;')
-#     prods=curr.fetchall()
-#     return prods
+# fetch products
+def fetch_products():
+    curr.execute('select * from products;')
+    prods=curr.fetchall()
+    return prods
 
 # products=fetch_products()
 # print('my products')
 # print(products)
 
 
-# #fetch sales
-# def fetch_sales():
-#     curr.execute('select * from sales;')
-#     sales=curr.fetchall()
-#     return sales
+#fetch sales
+def fetch_sales():
+    curr.execute('select * from sales;')
+    sales=curr.fetchall()
+    return sales
 # sales=fetch_sales()
 # print('my sales')
 # print(sales)
 
 
-# #fetch stock
-# def fetch_stock():
-#     curr.execute('select * from stock;')
-#     stock=curr.fetchall()
-#     return stock
+#fetch stock
+def fetch_stock():
+    curr.execute('select * from stock;')
+    stock=curr.fetchall()
+    return stock
 # stock=fetch_stock()
 # print('my stock')
 # print(stock)
@@ -47,12 +47,12 @@ def fetch_data(table_name):
     curr.execute(f'select * from {table_name}')
     data=curr.fetchall()
     return data
-products=fetch_data('products')
-print(products)
-sales=fetch_data('sales')
-print(sales)
-stock=fetch_data('stock')
-print(stock)
+# products=fetch_data('products')
+# print(products)
+# sales=fetch_data('sales')
+# print(sales)
+# stock=fetch_data('stock')
+# print(stock)
 
 #  # insert
 # curr.execute("insert into products(name,buying_price,selling_price)values('mango',100,120);")
@@ -68,10 +68,10 @@ def insert_products(values):
     query="insert into products(name, buying_price,selling_price)values(%s,%s,%s);"
     curr.execute(query,values)
     connect.commit()
-new_product=('garlic',150,170) 
-# insert_products(new_product)
-products = fetch_data('products')
-print(products) 
+# new_product=('garlic',150,170) 
+# # insert_products(new_product)
+# # products = fetch_data('products')
+# # print(products) 
 
 #insert sales
 
@@ -80,10 +80,10 @@ def insert_sales(values):
     curr.execute(query,values)
     connect.commit()
 
-new_sales=(5,10)
-# insert_sales(new_sales)
-sales=fetch_data('sales')
-print(sales)
+# new_sales=(5,10)
+# # insert_sales(new_sales)
+# sales=fetch_data('sales')
+# print(sales)
 
 #insert stock
 def insert_stock(values):
@@ -91,10 +91,10 @@ def insert_stock(values):
     curr.execute(query,values)
     connect.commit()
 
-new_stock=(5,10)
-# insert_stock(new_stock)
-stock=fetch_data('stock')
-print(stock)
+# new_stock=(5,10)
+# # insert_stock(new_stock)
+# stock=fetch_data('stock')
+# print(stock)
 
 # fuctions that get profit per product
 def product_profit():
@@ -103,9 +103,9 @@ def product_profit():
     profit=curr.fetchall()
     return profit
 
-my_profit=product_profit()
-print('total profit')
-print(my_profit)
+# my_profit=product_profit()
+# print('total profit')
+# print(my_profit)
 
 #write a fuction that gets sales per product
 def product_sales():
@@ -114,9 +114,9 @@ def product_sales():
     sales=curr.fetchall()
     return sales
 
-my_sales=product_sales()
-print('total sales')
-print(my_sales)
+# my_sales=product_sales()
+# print('total sales')
+# print(my_sales)
 
 
 
