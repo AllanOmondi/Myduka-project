@@ -24,12 +24,14 @@
                 </tr>
             </thead>
             <tbody>
+                {%for sales in total_sales %}
                 <tr>
-                    <td></td>
-                    <td></td>
-                    <td></td>
+                    <td>{{sales[0]}}</td>
+                    <td>{{sales[0]}}</td>
+                    <td>{{sales[0]}}</td>
                     
                 </tr>
+                {%endfor%}
                 
             </tbody>
         </table>

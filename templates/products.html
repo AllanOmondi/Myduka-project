@@ -18,19 +18,22 @@
         <table class="table table-bordered table-hover mt-4">
             <thead class="table-dark">
                 <tr>
-                    
-                    <th >Product Name</th>
-                    <th >Buying Price </th>
-                    <th >selling Price</th>
+                    <th>product ID</th>
+                    <th>Product Name</th>
+                    <th>Buying Price </th>
+                    <th>selling Price</th>
                 </tr>
             </thead>
             <tbody>
+                {% for prods in total_products %}
                 <tr>
-                    <td>Laptop</td>
-                    <td>22000</td>
-                    <td>24000</td>
+                    <td>{{prods[0]}}</td>
+                    <td>{{prods[1]}}</td>
+                    <td>{{prods[2]}}</td>
+                    <td>{{prods[3]}}</td>
                 </tr>
-                
+                {% endfor %}
+
             </tbody>
         </table>
     </div>
