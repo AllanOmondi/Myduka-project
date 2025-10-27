@@ -1,12 +1,58 @@
 <!DOCTYPE html>
 <html lang="en">
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
 </head>
+
 <body>
-    <h1>My Stock page</h1>
-    <p>{{total_stock}}</p>
+
+    <div class="container">
+        <h1 class="mb-3">My Stock Page</h1>
+        <p>Total Stock: <strong>{{ total_stock }}</strong></p>
+
+        <table class="table table-striped table-hover mt-4">
+            <thead class="table-dark">
+                <tr>
+                    <th>Stock ID</th>
+                    <th>Product</th>
+                    <th>Category</th>
+                    <th>Quantity</th>
+                    
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>1</td>
+                    <td>Laptop</td>
+                    <td>Electronics</td>
+                    <td>15</td>
+                    <td>2025-10-27</td>
+                </tr>
+                <tr>
+                    <td>2</td>
+                    <td>Mouse</td>
+                    <td>Accessories</td>
+                    <td>60</td>
+                    
+                </tr>
+                <tr>
+                    <td>3</td>
+                    <td>Chair</td>
+                    <td>Furniture</td>
+                    <td>25</td>
+                   
+                </tr>
+            </tbody>
+        </table>
+    </div>
 </body>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI"
+    crossorigin="anonymous"></script>
+
 </html>
