@@ -1,22 +1,79 @@
 <!DOCTYPE html>
 <html lang="en">
-<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet"
-    integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
 
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>My Duka</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
+    <link rel="stylesheet" href="index.css">    
+
+    
 </head>
 
 <body>
-    
-    <h1>MyDuka Homepage </h1>
-    <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Temporibus, distinctio. Deserunt nulla officia, harum
-        tenetur esse accusamus? Provident, omnis commodi.</p>
+    <nav class="navbar navbar-expand-lg">
+        <div class="container-fluid">
+            <a class="navbar-brand fs-4 fw-bold" href="#">My Duka</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup"
+                aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse justify-content-end" id="navbarNavAltMarkup">
+                <div class="navbar-nav">
+                    <a class="nav-link active" aria-current="page" href="/">Home</a>
+                    <a class="nav-link" href="/products">Products</a>
+                    <a class="nav-link" href="/sales">Sales</a>
+                    <a class="nav-link" href="/stock">Stock</a>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <div class="container mt-5">
+        <div class="card p-4 shadow-lg rounded-4">
+            <h3 class="text-center mb-3">Enter Your Name</h3>
+            <form onsubmit="showName(event)">
+                <div class="mb-3">
+                    <label for="nameInput" class="form-label fw-semibold">Full Name</label>
+                    <input type="text" class="form-control form-control-lg" id="nameInput" placeholder="Enter your name"
+                        required>
+                </div>
+                <div class="d-grid">
+                    <button type="submit" class="btn btn-primary btn-lg">Submit</button>
+                </div>
+            </form>
+            <div class="mt-4 text-center">
+                <p id="output" class="fs-5 fw-semibold text-success"></p>
+            </div>
+        </div>
+    </div>
+
+    <div class="container mt-5 text-center">
+        <h1 class="fw-bold text-primary">MyDuka Homepage</h1>
+        <p class="text-muted mx-auto" style="max-width: 600px;">
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Temporibus, distinctio.
+            Deserunt nulla officia, harum tenetur esse accusamus? Provident, omnis commodi.
+        </p>
+    </div>
+
+    <footer class="mt-5">
+        <p>© 2025 My Duka. All rights reserved.</p>
+    </footer>
+
+    <script>
+        function showName(event) {
+            event.preventDefault();
+            const name = document.getElementById('nameInput').value;
+            const output = document.getElementById('output');
+            output.textContent = `Welcome, ${name}!`;
+        }
+    </script>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI"
+        crossorigin="anonymous"></script>
 </body>
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"
-    integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI"
-    crossorigin="anonymous"></script>
 
 </html>
