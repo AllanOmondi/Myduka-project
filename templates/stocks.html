@@ -2,6 +2,7 @@
 <html lang="en">
 <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet"
     integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
+<link rel="stylesheet" href="//cdn.datatables.net/2.3.4/css/dataTables.dataTables.min.css">
 
 <head>
     <meta charset="UTF-8">
@@ -12,7 +13,7 @@
 <body>
 
     <body class="bg-light">
-        <nav class="navbar navbar-expand-lg">
+        <nav class="navbar navbar-expand-lg shadow-sm">
             <div class="container-fluid">
                 <a class="navbar-brand fs-4 fw-bold" href="#">My Duka</a>
                 <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
@@ -22,7 +23,7 @@
                 </button>
                 <div class="collapse navbar-collapse justify-content-end" id="navbarNavAltMarkup">
                     <div class="navbar-nav">
-                        <a class="nav-link active" aria-current="page" href="/">Home</a>
+                        <a class="nav-link active" href="/">Home</a>
                         <a class="nav-link" href="/products">Products</a>
                         <a class="nav-link" href="/sales">Sales</a>
                         <a class="nav-link" href="/stock">Stock</a>
@@ -32,7 +33,7 @@
         </nav>
 
         <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal">
-            add New Stock
+            Add New Stock
         </button>
 
 
@@ -45,9 +46,9 @@
                     </div>
                     <div class="modal-body">
                         <form action="/add_stock" method="post" class="form-control">
-                            <label for="pid">select stock</label><br>
+                            <label for="pid">choose stock</label><br>
                             <select name="pid" id="pid">
-                            {% for prods in total_products %}
+                                {% for prods in total_products %}
                                 <option value="{{prods[0]}}">{{prods[1]}}</option>
                                 {% endfor %}
                             </select><br>
@@ -66,7 +67,7 @@
 
 
 
-        <table class="table table-striped table-hover mt-4">
+        <table class="display" id="myTable">
             <thead class="table-dark">
                 <tr>
                     <th>Stock ID</th>
@@ -90,9 +91,21 @@
             </tbody>
         </table>
         </div>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js"
+            integrity="sha512-v2CJ7UaYy4JwqLDIrZUI/4hqeoQieOmAZNXBeQyjo21dadnwR+8ZaIJVT8EE2iyI61OV8e6M8PP2/4hpQINQ/g=="
+            crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+        <script src="//cdn.datatables.net/2.3.4/js/dataTables.min.js"></script>
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"
+            integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI"
+            crossorigin="anonymous"></script>
+
+        <script>
+            let table = new DataTable('#myTable');
+        </script>
+
+
     </body>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"
-        integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI"
-        crossorigin="anonymous"></script>
+
+
 
 </html>
