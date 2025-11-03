@@ -1,0 +1,66 @@
+body {
+  background: linear-gradient(135deg, #814741, #606da4, #88b4e6);
+  color: #f8f9fa;
+  font-family: "Poppins", sans-serif;
+}
+
+.carousel-inner img {
+  width: 80%;
+  height: 200;
+  border-radius: 15px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+}
+
+.home-section h1 {
+  color: #ffffff;
+  text-shadow: 1px 1px 4px rgba(0, 0, 0, 0.5);
+}
+
+.home-section .description {
+  max-width: 700px;
+  line-height: 1.8;
+  color: #e9ecef;
+  font-size: 1.1rem;
+}
+
+.home-section .description span {
+  color: #ffdd57;
+  font-weight: 600;
+}
+
+.btn-light {
+  background-color: #ffffff;
+  color: #007bff;
+  border: none;
+  font-weight: 600;
+  transition: 0.3s;
+}
+
+.btn-light:hover {
+  background-color: #ffdd57;
+  color: #000;
+}
+
+.card {
+  border-radius: 15px;
+  overflow: hidden;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.card:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+}
+
+.card-img-top {
+  height: 200px;
+  object-fit: cover;
+}
+
+.btn {
+  border-radius: 25px;
+  padding: 0.4rem 1.2rem;
+}
+
+
+

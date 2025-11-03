@@ -7,16 +7,20 @@
     <title>My Duka</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet"
         integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
-    <link rel="stylesheet" href="index.css">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/index.css') }}">
+
+
 
 
 </head>
 
+
 <body>
+
 
     <nav class="navbar navbar-expand-lg">
         <div class="container-fluid">
-            <a class="navbar-brand fs-4 fw-bold" href="#">My Duka</a>
+            <a class="navbar-brand fs-4 fw-bold" href="/dashboard">My Duka</a>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup"
                 aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
@@ -27,59 +31,115 @@
                     <a class="nav-link" href="/products">Products</a>
                     <a class="nav-link" href="/sales">Sales</a>
                     <a class="nav-link" href="/stock">Stock</a>
+                    <a class="nav-link" href="/dashboard">Dashboard</a>
+
+
+
                 </div>
             </div>
         </div>
     </nav>
 
-    <div id="carouselExample" class="carousel slide">
-        <div class="carousel-inner">
+
+    <div id="carouselExample" class="carousel slide mx-auto mt-4" data-bs-ride="carousel" style="max-width: 900px;" height="200px">
+        <div class="carousel-inner rounded-4 shadow-sm">
             <div class="carousel-item active">
-                <img src="..." class="d-block w-100" alt="...">
+                <img src="https://vasyerp.com/image/pos-software-dashboard.png" class="d-block w-100" alt="POS image">
             </div>
             <div class="carousel-item">
-                <img src="../static/css/index.css" class="d-block w-100" alt="">
+                <img src="https://img.freepik.com/free-vector/woman-self-kiosk-checkout-payment-store_107791-30537.jpg?semt=ais_hybrid&w=740&q=80"
+                    class="d-block w-100" alt="POS image">
             </div>
             <div class="carousel-item">
-                <img src="..." class="d-block w-100" alt="...">
+                <img src="https://posify.io/wp-content/uploads/Untitled-900-x-600-px-900-x-600-px-45.jpg"
+                    class="d-block w-100" alt="POS image">
             </div>
         </div>
+
         <button class="carousel-control-prev" type="button" data-bs-target="#carouselExample" data-bs-slide="prev">
             <span class="carousel-control-prev-icon" aria-hidden="true"></span>
             <span class="visually-hidden">Previous</span>
         </button>
+
         <button class="carousel-control-next" type="button" data-bs-target="#carouselExample" data-bs-slide="next">
             <span class="carousel-control-next-icon" aria-hidden="true"></span>
             <span class="visually-hidden">Next</span>
         </button>
     </div>
 
-    <div class="container mt-5">
-        <div class="card p-4 shadow-lg rounded-4">
-            <h3 class="text-center mb-3">Enter Your Name</h3>
-            <form onsubmit="showName(event)">
-                <div class="mb-3">
-                    <label for="nameInput" class="form-label fw-semibold">Full Name</label>
-                    <input type="text" class="form-control form-control-lg" id="nameInput" placeholder="Enter your name"
-                        required>
+
+
+    <div class="container mt-5 text-center home-section">
+        <h1 class="fw-bold mb-3">Welcome to My Duka</h1>
+        <p class="description mx-auto">
+            Transform your mini market with <span>My Duka</span> - the modern POS system that combines simplicity,
+            speed, and smart management.
+            Track your stock, record your sales, and manage your products seamlessly from one dashboard.
+            <br><br>
+            <span>My Duka</span> gives you full control of your business, anytime and anywhere.
+        </p>
+        <a href="/products" class="btn btn-light btn-lg mt-3">Get Started</a>
+    </div>
+
+
+    <div class="container my-5">
+        <div class="row justify-content-center text-center">
+
+            <!-- Products Card -->
+            <div class="col-md-4 mb-4">
+                <div class="card shadow-sm h-100">
+                    <img src="https://img.freepik.com/free-vector/online-shopping-concept-illustration_114360-1086.jpg?w=740&q=80"
+                        class="card-img-top" alt="POS Products">
+                    <div class="card-body">
+                        <h5 class="card-title fw-bold">Smart POS Products</h5>
+                        <p class="card-text">
+                            Explore and manage your products easily. Add, edit, and categorize items with just a few
+                            clicks in your My Duka POS system.
+                        </p>
+                        <a href="/products" class="btn btn-primary">View Products</a>
+                    </div>
                 </div>
-                <div class="d-grid">
-                    <button type="submit" class="btn btn-primary btn-lg">Submit</button>
-                </div>
-            </form>
-            <div class="mt-4 text-center">
-                <p id="output" class="fs-5 fw-semibold text-success"></p>
             </div>
+
+            <!-- Sales Card -->
+            <div class="col-md-4 mb-4">
+                <div class="card shadow-sm h-100">
+                    <img src="https://img.freepik.com/free-vector/sales-performance-concept-illustration_114360-8191.jpg?w=740&q=80"
+                        class="card-img-top" alt="Sales">
+                    <div class="card-body">
+                        <h5 class="card-title fw-bold">Track Your Sales</h5>
+                        <p class="card-text">
+                            Get real-time sales analytics, monitor performance trends, and improve decision-making with
+                            clear visual reports.
+                        </p>
+                        <a href="/sales" class="btn btn-primary">View Sales</a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Stock & Dashboard Card -->
+            <div class="col-md-4 mb-4">
+                <div class="card shadow-sm h-100">
+                    <img src="https://www.shutterstock.com/image-vector/data-driven-marketing-customer-hand-600nw-2475037545.jpg"
+                        class="card-img-top" alt="Stock and Dashboard">
+                    <div class="card-body">
+                        <h5 class="card-title fw-bold">Inventory & Dashboard</h5>
+                        <p class="card-text">
+                            Monitor your stock levels and track your business performance - all from an intuitive and
+                            powerful dashboard.
+                        </p>
+                        <a href="/stock" class="btn btn-outline-primary me-2">View Stock</a>
+                        <a href="/dashboard" class="btn btn-primary">Dashboard</a>
+                    </div>
+                </div>
+            </div>
+
         </div>
     </div>
 
-    <div class="container mt-5 text-center">
-        <h1 class="fw-bold text-primary">MyDuka Homepage</h1>
-        <p class="text-muted mx-auto" style="max-width: 600px;">
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Temporibus, distinctio.
-            Deserunt nulla officia, harum tenetur esse accusamus? Provident, omnis commodi.
-        </p>
-    </div>
+
+
+
 
     <footer class="mt-5">
         <p>© 2025 My Duka. All rights reserved.</p>

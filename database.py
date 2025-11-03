@@ -98,12 +98,12 @@ def insert_stock(values):
 
 # fuctions that get profit per product
 def product_profit():
-    query='select p.name,p.id,sum((p.selling_price-p.buying_price)*s.quantity) as total_profit from products as p join sales s on p.id=s.pid group by p.name,p.id;'
+    query='select p.name,sum((p.selling_price-p.buying_price)*s.quantity) as total_profit from products as p join sales s on p.id=s.pid group by p.name;'
     curr.execute(query)
     profit=curr.fetchall()
     return profit
 
-# my_profit=product_profit()
+my_profit=product_profit()
 # print('total profit')
 # print(my_profit)
 
