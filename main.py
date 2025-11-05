@@ -82,24 +82,26 @@ def dashboard():
         product_names.append(i[0])
         product_profits.append(float (i[1]))
     # print(product_names)
-    # print(product_profits)    
+    # print(product_profits)   
+
+    total_sales=product_sales()
+    sale_name=[]
+    sale_product=[]
+    for i in total_sales:
+        sale_name.append(i[0])
+        sale_product.append(float(i[2])) 
+        print(sale_name)
+        print(sale_product)
 
 
-    return render_template('dashboard.html', product_names=product_names, product_profits=product_profits)
+    return render_template('dashboard.html', product_names=product_names, product_profits=product_profits, s_name=sale_name,
+    s_product=sale_product)
 
-# @app.route('/dashboard')
-def dashboard():
-    s=product_sales()
-    # print(sprofits)
-    product_names=[]
-    product_sales=[]
-    for i in s:
-        product_names.append(i[0])
-        product_sales.append(i[1])
-    print(product_names)
-    print(product_sales)
 
-    return render_template('dashboard.html', product_names=product_names, product_sales=product_sales)
+    
+    
+
+    
 
 
 
